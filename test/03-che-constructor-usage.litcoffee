@@ -4,11 +4,11 @@
 Run passing unit tests on the `Che` constructor. 
 
 
-    test.page    "`Che` Constructor Usage"
+    tudor.page    "`Che` Constructor Usage"
 
-    test.section "No `opt` Argument"
+    tudor.section "No `opt` Argument"
 
-    test.is [
+    tudor.is [
 
       "Class is a function"
       'function'
@@ -22,7 +22,7 @@ Run passing unit tests on the `Che` constructor.
 
     ]
 
-    test.equal [
+    tudor.equal [
 
       "`toString()` is '[object Che]'"
       '[object Che]'

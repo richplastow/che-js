@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CheJS: Browser Install</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<body>
+  <h1>CheJS: Browser Install</h1>
+
+  <h2>Old fashioned browser install, providing <tt>window.Che</tt>:</h2>
+  <script src="../build/che.js"></script>
+  <pre><script>document.write( new window.Che().I );</script></pre>
+
+  <h2>Inline browser install using RequireJS, providing <tt>Che</tt> as an argument:</h2>
+  <pre id="require-js-output"></pre>
+  <script src="lib/require.js"></script>
+  <script>
+    require(['../build/che'], function(Che) {
+        document.querySelector('#require-js-output').innerHTML = new Che().I
+    })
+  </script>
+
+</body>
+</html>

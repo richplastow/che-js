@@ -1,17 +1,16 @@
-Do Test
-=======
+Tudor
+=====
 
-‘Do Test’ is a test framework with an easy-to-write, easy-to-read format for 
-test-definitions. 
-
+The easy-to-write, easy-to-read test framework. 
 
 
 
-Define the `DoTest` class
--------------------------
 
-    class DoTest
-      I: 'DoTest'
+Define the `Tudor` class
+------------------------
+
+    class Tudor
+      I: 'Tudor'
       toString: -> "[object #{I}]"
 
       jobs: []
@@ -22,7 +21,14 @@ Define the `DoTest` class
 Define the constructor
 ----------------------
 
-      constructor: ->
+      constructor: (opt={}) ->
+        switch opt.format
+          when 'html'
+            @header =   '<a href="#end" id="top">\u2b07</a>'
+            @footer = '\n<a href="#top" id="end">\u2b06</a>'
+          else
+            @header =   '\u2b07'
+            @footer = '\n\u2b06'
 
 
 
@@ -61,9 +67,9 @@ Generate a summary message.
 
 Return the result as a string. 
 
-        md.unshift '<a href="#end" id="top">\u2b07</a>' + summary
-        md.push  '\n<a href="#top" id="end">\u2b06</a>' + summary
-        md.join  '\n'
+        md.unshift @header + summary
+        md.push    @footer + summary
+        md.join '\n'
 
 
 
@@ -72,7 +78,7 @@ Return the result as a string.
 Add a page heading. 
 
       page: (text) ->
-        @jobs.push "\n\n#{text}\n=" + ( new Array(text.length).join '=' ) + '\n'
+        @jobs.push "\n\n#{text}\n=" + ( new Array(text.length).join '=' )
 
 
 

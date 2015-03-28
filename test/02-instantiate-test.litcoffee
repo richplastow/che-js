@@ -1,15 +1,15 @@
-Instantiate `test`
-==================
+Set up `tudor`
+==============
 
-Create an instance of `DoTest`, to add tests to. 
+Create an instance of `Tudor`, to add tests to. 
 
-    test = new DoTest
+    tudor = new Tudor
+      format: if env.has.window then 'html' else 'plain'
 
 
-Allow the `DoTest` instance’s `do()` method to be accessed from anywhere.  
-@todo export for NodeJS, RequireJS etc
+Allow the `Tudor` instance’s `do()` method to be called using `Che.runTest()`. 
 
-    window.doTest = test.do
+    Che.runTest = tudor.do
 
 
 

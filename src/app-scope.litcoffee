@@ -13,7 +13,39 @@ Version, licence and homepage notice
 Begin with a comment-block which will be preserved after compilation. The ‘!’ 
 tells minifiers to preserve this comment. 
 
-    ###! CheJS 0.0.2 //// MIT licence //// che-js.richplastow.com ////###
+    ###! CheJS 0.0.3 //// MIT licence //// che-js.richplastow.com ////###
+    I = 'CheJS'
+    VERSION = '0.0.3'
+
+
+
+
+Variables which help minification
+---------------------------------
+
+    A = 'array'
+    E = 'error'
+    F = 'function'
+    O = 'object'
+    S = 'string'
+    U = 'undefined'
+
+
+
+
+Get environment variables
+-------------------------
+
+    env = { has:{} }
+
+The ‘global object’ can usually be accessed by the `this` operator (or `@` in 
+CoffeeScript), while in [global scope](http://goo.gl/EV1HSD). However, some 
+environments, eg [Node](http://goo.gl/Lf84YI), provide a `global` namespace. 
+
+    env.has.global = O == typeof global
+    env.has.window = ! (O != typeof window or (env.has.global && global.window))
+    env.global = if env.has.global and ! env.has.window then global else @
+    #console.log "env.has.global: #{env.has.global}  env.has.window: #{env.has.window}"
 
 
 
@@ -45,15 +77,15 @@ Used by `properties()` to simplify stringified property values.
 
     simplify = (value) ->
       switch toType value
-        when 'string'
+        when S
           value
-        when 'undefined', 'null'
+        when U, 'null'
           "[#{value}]"
-        when 'error'
+        when E
           "#{location value} #{value.message}"
-        when 'array'
+        when A
           "[..#{value.length}..]"
-        when 'function'
+        when F
           "[function]"
         else
           "#{value}"
@@ -71,7 +103,7 @@ overriding an object’s `toString()` method like this:
     properties = ->
       out = []
       for key,value of @
-        if 'function' != toType value then out.push "#{key}:#{simplify value}"
+        if F != toType value then out.push "#{key}:#{simplify value}"
       out.join '  '
 
 
@@ -84,14 +116,14 @@ array of error messages, one for each broken rule.
 
     validate = (subject, rules) ->
 
-      if 'object' != toType subject
+      if O != toType subject
         return ["`subject` is type '#{toType subject}' not 'object'"]
 
 Every `rule` must contain four elements:
 - `key  <string> ` Specifies the key to be tested
 - `mand <boolean>` Whether the key is mandatory
 - `type <string> ` The expected result when `toType()` is called on the value
-- `test <regexp> ` An object with `test()` and `toString()` methods
+- `test <object> ` An object with `test()` and `toString()` methods, eg a regexp
 
 Step through each `rule` in the `rules` array. 
 

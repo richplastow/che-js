@@ -4,11 +4,11 @@ Xx Xx
 Xx. 
 
 
-    test.page    "Xx Xx"
+    tudor.page    "Xx Xx"
 
-    test.section "Xx Xx"
+    tudor.section "Xx Xx"
 
-    test.is [
+    tudor.is [
 
       -> new Xx
 
@@ -19,7 +19,7 @@ Xx.
 
     ]
 
-    test.equal [
+    tudor.equal [
 
       "Xx"
       'xx'

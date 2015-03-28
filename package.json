@@ -1,0 +1,25 @@
+{
+  "name": "che",
+  "version": "0.0.3",
+  "license": "MIT",
+  "homepage": "http://che-js.richplastow.com/",
+  "author": "Rich Plastow <rich@richplastow.com> (http://richplastow.com/)",
+  "description": "Literate CoffeeScript implementation of Che, the ‘Collection of Hot Endpoints’",
+  "main": "build/che.js",
+  "scripts": {
+    "test": "node test/run-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richplastow/che-js.git"
+  },
+  "keywords": [
+    "modular",
+    "spatial",
+    "connection",
+    "che",
+    "endpoint",
+    "coffeescript",
+    "litcoffee"
+  ]
+}
