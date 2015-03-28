@@ -1,4 +1,4 @@
-CheJS 0.0.1
+CheJS 0.0.2
 ===========
 
 Literate CoffeeScript classes for Che, a ‘Collection of Hot Endpoints’. 

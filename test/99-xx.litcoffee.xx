@@ -1,0 +1,32 @@
+Xx Xx
+=====
+
+Xx. 
+
+
+    test.page    "Xx Xx"
+
+    test.section "Xx Xx"
+
+    test.is [
+
+      -> new Xx
+
+      "Xx"
+      'xx'
+      (c) -> c
+
+
+    ]
+
+    test.equal [
+
+      "Xx"
+      'xx'
+      (c) -> c
+
+
+    ]
+
+
+
