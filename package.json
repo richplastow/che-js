@@ -1,14 +1,11 @@
 {
   "name": "che",
-  "version": "0.0.5",
+  "version": "0.0.6-1",
   "license": "MIT",
   "homepage": "http://che-js.richplastow.com/",
   "author": "Rich Plastow <rich@richplastow.com> (http://richplastow.com/)",
-  "description": "Literate CoffeeScript implementation of Che, the ‘Collection of Hot Endpoints’",
+  "description": "JavaScript implementation of Che, the ‘Collection of Hot Endpoints’",
   "main": "build/che.js",
-  "scripts": {
-    "test": "node test/run-test.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/richplastow/che-js.git"
@@ -22,5 +19,13 @@
     "coffeescript",
     "litcoffee"
   ],
-  "readmeFilename": "doc/summary.md"
+  "devDependencies": {
+    "coffee-script": "latest",
+    "nodemon": "latest"
+  },
+  "scripts": {
+    "test": "node test/run-test.js",
+    "build": "cat src/*.litcoffee | coffee --stdio --literate --compile > build/che.js",
+    "watch": "nodemon -x \"cat src/*.litcoffee test/*.litcoffee | coffee -slc > build/test/che-with-test.js\" -e litcoffee -w src -w test"
+  }
 }
