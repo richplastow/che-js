@@ -36,14 +36,14 @@ nodemon --exec "\
 
 Which means: 
 
-1. Invoke `nodemon`, and pass it some doublequoted code to execute
-2. Concatenate litcoffee files in ‘src/’ and ‘test/’, and pipe that to...
-3. The CoffeeScript compiler:
+1.  Invoke `nodemon`, and pass it some doublequoted code to execute
+2.  Concatenate litcoffee files in ‘src/’ and ‘test/’, and pipe that to...
+3.  The CoffeeScript compiler:
     - `--stdio` Use stdin and stdout, instead of files
     - `--literate` Treat stdin as Literate CoffeeScript
     - `--compile` Compile stdin to stdout
     - `>` Send stdout to ‘build/test/che-with-test.js’
-4. Watch litcoffee files in ‘src/’ and ‘test/’ for changes
+4.  Watch litcoffee files in ‘src/’ and ‘test/’ for changes
 
 
 
