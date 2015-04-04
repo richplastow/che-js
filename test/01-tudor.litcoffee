@@ -96,17 +96,19 @@ Add a section heading.
 Schedule a custom test. 
 
       custom: (tests, runner) ->
-        for test,i in tests
-          if 'function' == toType test
-            @jobs.push test
+        i = 0
+        while i < tests.length
+          if 'function' == toType tests[i]
+            @jobs.push tests[i]
           else
             @jobs.push [
-              runner      # <function>  runner  Function which will run the test
-              test        # <string>    name    A short description of the test
-              tests[++_i] # <mixed>     expect  Defines a successful test
-              tests[++_i] # <function>  actual  Produces the result to test
+              runner     # <function>  runner  Function which will run the test
+              tests[i]   # <string>    name    A short description of the test
+              tests[++i] # <mixed>     expect  Defines a successful test
+              tests[++i] # <function>  actual  Produces the result to test
             ]
-        @jobs.push '- - -' # http://daringfireball.net/projects/markdown/syntax#hr
+          i++
+        @jobs.push '- - -' # http://goo.gl/TWH3W3
 
 
 
