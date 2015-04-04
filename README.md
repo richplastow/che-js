@@ -1,11 +1,13 @@
-CheJS 0.0.4
+CheJS 0.0.5
 ===========
 
-#### Literate CoffeeScript implementation of Che, the ‘Collection of Hot 
-Endpoints’
+#### JavaScript implementation of Che, the ‘Collection of Hot Endpoints’
 
-See [che-js.richplastow.com](http://che-js.richplastow.com/) for documentation 
-and live usage examples. 
+* [Read the CheJS Docs](http://che-js.richplastow.com/)
+* [Installing CheJS](#installing-chejs)
+* [Testing CheJS](#testing-chejs)
+* [Installing Build Tools](#installing-build-tools)
+* [The Build Process](#the-build-process)
 
 
 
@@ -46,11 +48,14 @@ for installation examples.
 Testing CheJS
 -------------
 
-Test with [npm](http://goo.gl/UYupZI):  
-`$ npm test`
+Test with [npm](http://goo.gl/UYupZI) on the command line: 
+```bash
+npm test
+```
 
 Test on the client:  
-Open `test/run-test.html` in a web browser
+Open [test/run-test.html](http://che-js.richplastow.com/test/run-test.html) in 
+a web browser
 
 
 
@@ -58,12 +63,12 @@ Open `test/run-test.html` in a web browser
 Installing Build Tools
 ----------------------
 
-Install `coffee` 1.9.1 on the command line: 
+Install [coffee](http://coffeescript.org/) 1.9.1 on the command line: 
 ```bash
 sudo npm install -g coffee-script
 ```
 
-Install `nodemon` 1.3.7 on the command line: 
+Install [nodemon](http://nodemon.io/) 1.3.7 on the command line: 
 ```bash
 sudo npm install -g nodemon
 ```
@@ -90,13 +95,13 @@ nodemon --exec "\
 Which means: 
 
 1. Invoke `nodemon`, and pass it some doublequoted code to execute
-2. Concatenate ‘src/*.mammouth’ and ‘test/*.mammouth’ files, and pipe to...
-3. ...The CoffeeScript compiler, with:
+2. Concatenate litcoffee files in ‘src’ and ‘test’, and pipe that to...
+3. The CoffeeScript compiler:
     - `--stdio` Use stdin and stdout, instead of files
     - `--literate` Treat stdin as Literate CoffeeScript
     - `--compile` Compile stdin to stdout
     - `>` Send stdout to ‘build/test/che-with-test.js’
-4. Watch ‘src/*.mammouth’ and ‘test/*.mammouth’ files for changes
+4. Watch litcoffee files in ‘src’ and ‘test’ files for changes
 
 Build with tests and watch for changes, all on one line: 
 ```bash

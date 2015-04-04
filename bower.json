@@ -1,6 +1,6 @@
 {
   "name": "che",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "http://che-js.richplastow.com/",
   "authors": [
     "Rich Plastow <rich@richplastow.com> (http://richplastow.com/)"
@@ -28,6 +28,7 @@
     "bower.json",
     "build/test",
     "CNAME",
+    "doc",
     "index.html",
     "node_modules",
     "package.json",
