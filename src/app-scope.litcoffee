@@ -1,4 +1,4 @@
-dApp Scope
+App Scope
 =========
 
 Define variables and functions with application-level scope. These are only 
@@ -13,9 +13,9 @@ Version, licence and homepage notice
 Begin with a comment-block which will be preserved after compilation. The ‘!’ 
 tells minifiers to preserve this comment. 
 
-    ###! CheJS 0.0.6-1 //// MIT licence //// che-js.richplastow.com ////###
+    ###! CheJS 0.0.6-2 //// MIT licence //// che-js.richplastow.com ////###
     I = 'CheJS'
-    VERSION = '0.0.6-1'
+    VERSION = '0.0.6-2'
 
 
     
